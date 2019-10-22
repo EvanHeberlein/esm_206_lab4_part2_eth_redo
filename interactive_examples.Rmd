@@ -1,0 +1,48 @@
+---
+title: "interactive graph examples"
+author: "Evan Heberlein"
+date: "10/22/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) #Changing echo to false causes code to be hidden for entire document
+```
+
+Here, we'll practice making some interactive graphs and tables using built-in datasets in R packages.
+
+- Interactive plots: {plotly}
+- Interactive tables: {DT}
+
+```{r include=FALSE}
+# Attach packages
+library(tidyverse)
+library(plotly)
+library(DT)
+```
+
+### A. Interactive map of iris dimensions
+
+Using Edgar Anderson's famous 'iris' dataset
+
+```{r, echo = FALSE}
+
+iris_graph <- ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length)) +
+  geom_point(aes(size = Sepal.Width,
+                 color = Species), 
+             alpha = 0.5) +
+  theme_minimal() +
+  labs(x = "Petal width (cm)",
+       y = "Petal length (cm)",
+       title = "My iris graph")
+
+# iris_graph - comment out line of code you may want later, highlight & hit ctrl+shift+C to comment out multiple lines
+
+ggplotly(iris_graph)
+```
+
+### Make an interactive table with {DT}
+```{r}
+datatable(msleep)
+```
+
