@@ -1,1 +1,11 @@
-# esm_206_lab4_part2_eth_redo
+# My awesome ReadMe!
+
+- Some
+- Bullet
+- Points
+
+And other **useful information**:
+
+Text formatting matches .rmd
+
+*YAY* 
